@@ -1,0 +1,41 @@
+
+  <% @flats.each do |flat| %>
+     <p>
+    <strong>Name:</strong>
+    <%= flat.name %>
+  </p>
+
+  <p>
+    <strong>Address:</strong>
+    <%= flat.address %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= flat.description %>
+  </p>
+
+   <p>
+    <strong><i class="fa-solid fa-dollar-sign"></i></strong>
+    <%= flat.price_per_night %>
+  </p>
+
+   <p>
+    <strong><i class="fa-solid fa-people-group"></i></strong>
+    <%= flat.number_of_guests %>
+  </p>
+  <p>
+      <%= link_to "more info", flat %>
+    </p>
+
+     <p>
+      <%= link_to "edit", edit_flat_path(flat)%>
+    </p>
+  <p>
+      <%= link_to "Delete", flat,
+          data: { turbo_method: :delete,
+          turbo_confirm: 'Êtes-vous certain(e) ?'} %>
+  </p>
+    <br>
+
+  <% end %>
